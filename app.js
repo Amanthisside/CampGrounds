@@ -22,7 +22,7 @@ const reviewRoutes= require('./routes/reviews');
 const userRoutes= require('./routes/users');
 const mongoSanitize=require('express-mongo-sanitize');
 // const dbUrl=process.env.DB_URL;
-const MongoDBStore=require("connect-view")(session);
+const MongoDBStore=require("connect-mongo")(session);
 
 
 
