@@ -1,0 +1,7 @@
+Cross Site Scripting
+Xss is a type of security vulnerability typically found i web applications.
+XSS attacks enable attackers to inject client-side scripts into web pages used by other users.
+images can be sent, even cookie can be retrieved by the hacker.
+for example in the Yelpcamp, if we add a new campground,
+title: Caesgo <script>alert("hahaha attacked")</script>
+this would actually run an alert. but this must not happen obviously.

@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate')%>
+<script>
+        const campground = <%- JSON.stringify(campgrounds) %>
+
+</script>
+<div id="map"></div>
+    <h1>All Campgrounds</h1>
+        <% for(let campground of campgrounds){ %>
+           <div class="card mb-3" style="background-color: #dad7cd;" >
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" src="https://images.unsplash.com/photo-1507668339897-8a035aa9527d?q=80&w=1365&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=campground.title %></h5>
+                        <p class="card-text"><%=campground.description%></p>
+                        <p class="card-text">
+                            <small class="text-muted"><%=campground.location%></small>
+                        </p>
+                        <a href='campgrounds/<%=campground._id%>'class="btn btn-primary">View <%=campground.title%> </a>
+                    </div>
+                </div>
+            </div>
+           </div> 
+           <% } %>
+   
+    
+           <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Leaflet Markercluster JS -->
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <script src="/javascripts/clusterMap.js"></script>
