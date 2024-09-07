@@ -9,8 +9,13 @@
            <div class="card mb-3" style="background-color: #dad7cd;" >
             <div class="row">
                 <div class="col-md-4">
-                    <img class="img-fluid" src="https://images.unsplash.com/photo-1507668339897-8a035aa9527d?q=80&w=1365&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                </div>
+                <%if(campground.images.length) {%>
+                <img class="img-fluid" alt="" src="<%=campground.images[0].url%>">
+                <% }else {%>
+                <img class="img-fluid" alt=""
+                    src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png">
+                <% } %>
+            </div>
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title"><%=campground.title %></h5>
